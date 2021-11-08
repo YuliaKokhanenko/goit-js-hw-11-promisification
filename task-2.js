@@ -12,12 +12,9 @@ const toggleUserState = (allUsers, userName) => {
     const updatedUsers = allUsers.map((user) =>
       user.name === userName ? { ...user, active: !user.active } : user
     );
-    try {
-      resolve(updatedUsers);
-    } catch (error) {
-      reject(console.error(error));
-    }
+    return resolve(updatedUsers);
   });
+  return promise;
   //   callback(updatedUsers);
 };
 
